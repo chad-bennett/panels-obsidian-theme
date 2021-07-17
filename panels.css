@@ -1,0 +1,541 @@
+/* panels theme for obsidian.md */
+/* by chad bennett  mister-chad.com */   
+/* still a work in progress..... */
+
+ /* credit: color system  borrowed from Minimal Obsidian theme @kepano and then tweaked */
+
+ :root {
+    --base-h: 40;
+    /* Base hue */
+    --base-s: 12%;
+    /* Base saturation */
+    --base-d: 16%;
+    /* Base lightness Dark Mode  - 0 is black */
+    --base-l: 90%;
+    /* Base lightness Light Mode  - 100 is white */
+    --accent-h: 200;
+    /* Accent hue */
+    --accent-s: 30%;
+    /* Accent saturation */
+    --accent-d: 60%;
+    /* Accent lightness Dark Mode */
+    --accent-l: 50%;
+    /* Accent lightness Light Mode */
+    --text: 'DM Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    --text-headline: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+    --font-normal: 16px;
+    --font-small: 0.8rem;
+    --font-smaller: 0.64rem;
+    --font-smallest: 0.512rem;
+    --h1: 3.052rem;
+    --h2: 2.441rem;
+    --h3: 1.953rem;
+    --h4: 1.563rem;
+    --h5: 1.25rem;
+    --h6: 1rem;
+    --normal-weight: 400;
+    /* Switch to 300 if you want thinner default text */
+    --bold-weight: 700;
+    /* Switch to 700 if you want thicker bold text */
+    --line-width: 40rem;
+    /* Maximum characters per line */
+    --line-height: 1.6;
+    --max-width: 87%;
+    /* Amount of padding around the text, use 90% for narrower padding */
+    --nested-padding: 3.5%;
+    /* Amount of padding for quotes and transclusions */
+    --icon-muted: 0.4;
+    --border-width: 1px;
+    --border-width-alt: 1px;
+    --cursor: default;
+ }
+.theme-light {
+    --background-primary: white;
+    --background-primary-alt: hsl(var(--base-h), var(--base-s), var(--base-l));
+    --background-secondary: hsl(var(--base-h), var(--base-s), var(--base-l));
+    --background-secondary-alt: hsl(var(--base-h), var(--base-s), var(--base-l));
+    --background-tertiary: hsl(var(--base-h), var(--base-s), calc(var(--base-l) - 5%));
+    --background-modifier-border: hsl(var(--base-h), var(--base-s), calc(var(--base-l) - 6%));
+    --background-modifier-border-hover: hsl(var(--base-h), var(--base-s), calc(var(--base-l) - 12%));
+    --background-modifier-border-focus: hsl(var(--base-h), var(--base-s), calc(var(--base-l) - 20%));
+    --background-modifier-form-field: hsl(var(--base-h), var(--base-s), calc(var(--base-l) + 6%));
+    --background-modifier-form-field-highlighted: hsl(var(--base-h), var(--base-s), calc(var(--base-l) + 8%));
+    --text-normal: hsl(var(--base-h), var(--base-s), calc(var(--base-l) - 80%));
+    --text-muted: hsl(var(--base-h), calc(var(--base-s) - 5%), calc(var(--base-l) - 55%));
+    --text-faint: hsl(var(--base-h), calc(var(--base-s) - 5%), calc(var(--base-l) - 25%));
+    --background-transparent: hsla(var(--base-h), var(--base-s), var(--base-l), 0);
+    --background-translucent: rgba(255, 255, 255, 0.85);
+    --background-match-highlight: hsla(var(--accent-h), 40%, 62%, 0.2);
+    --background-modifier-accent: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 10%));
+    --text-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-l));
+    --text-accent-hover: hsl(calc(var(--accent-h) + 180), calc(var(--accent-s) - 10%), calc(var(--accent-l) - 5%));
+    --text-on-accent: white;
+    --icon-hex: 000;
+    --interactive-accent: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) + 10%));
+    --interactive-accent-hover: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-l) - 0%));
+    --quote-opening-modifier: hsl(var(--base-h), var(--base-s), calc(var(--base-l) - 10%));
+    --interactive-accent-rgb: 220, 220, 220;
+    --text-selection: hsla(var(--accent-h), 50%, calc(var(--base-l) - 20%), 30%);
+    --text-highlight-bg: rgba(255, 208, 0, 0.3);
+    --text-highlight-bg-active: rgba(0, 0, 0, 0.1);
+    --background-modifier-cover: hsla(var(--base-h), var(--base-s), calc(var(--base-l) - 50%), 0.7);
+   --shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;;
+}
+
+.theme-light.minimal-light-contrast .workspace-fake-target-overlay.is-in-sidebar,
+.theme-light.minimal-light-contrast .titlebar,
+.theme-light.minimal-light-contrast .status-bar,
+.theme-light.minimal-light-contrast .workspace-ribbon.mod-left,
+.theme-light.minimal-light-contrast .mod-left-split,
+.theme-light.minimal-light-contrast .modal.mod-settings .vertical-tab-header,
+.theme-dark {
+    --background-primary: hsl(var(--base-h), var(--base-s), var(--base-d));
+    --background-primary-alt: hsl(var(--base-h), var(--base-s), calc(var(--base-d) - 2%));
+    --background-secondary: hsl(var(--base-h), var(--base-s), calc(var(--base-d) - 2%));
+    --background-secondary-alt: hsl(var(--base-h), var(--base-s), var(--base-d));
+    --background-tertiary: hsl(var(--base-h), var(--base-s), calc(var(--base-d) + 2%));
+    --background-modifier-border: hsl(var(--base-h), var(--base-s), calc(var(--base-d) + 4%));
+    --background-modifier-border-hover: hsl(var(--base-h), var(--base-s), calc(var(--base-d) + 10%));
+    --background-modifier-border-focus: hsl(var(--base-h), var(--base-s), calc(var(--base-d) + 20%));
+    --background-modifier-box-shadow: rgba(0, 0, 0, 0.3);
+    --text-normal: hsl(var(--base-h), var(--base-s), calc(var(--base-d) + 67%));
+    --text-muted: hsl(var(--base-h), var(--base-s), calc(var(--base-d) + 45%));
+    --text-faint: hsl(var(--base-h), var(--base-s), calc(var(--base-d) + 20%));
+    --background-transparent: hsla(var(--base-h), var(--base-s), var(--base-d), 0);
+    --background-translucent: hsla(var(--base-h), var(--base-s), var(--base-d), 0.85);
+    --background-match-highlight: hsla(var(--accent-h), 40%, 62%, 0.2);
+    --background-modifier-accent: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-d) - 10%));
+    --text-accent: hsl(var(--accent-h), var(--accent-s), var(--accent-d));
+    --text-accent-hover: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-d) + 12%));
+    --text-on-accent: white;
+    --icon-hex: FFF;
+    --interactive-accent: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-d) - 20%));
+    --interactive-accent-hover: hsl(var(--accent-h), var(--accent-s), calc(var(--accent-d) - 15%));
+    --quote-opening-modifier: hsl(var(--base-h), var(--base-s), calc(var(--base-d) + 10%));
+    --interactive-accent-rgb: 66, 66, 66;
+    --text-selection: hsla(var(--accent-h), 70%, 40%, 30%);
+    --text-highlight-bg: rgba(255, 177, 80, 0.3);
+    --text-highlight-bg-active: rgba(255, 255, 255, 0.1);
+    --background-modifier-cover: hsla(var(--base-h), var(--base-s), calc(var(--base-d) - 12%), 0.8);
+}
+
+.theme-light.minimal-light-white {
+    --background-secondary: white;
+}
+
+.theme-light.minimal-light-tonal {
+    --background-primary: hsl(var(--base-h), var(--base-s), var(--base-l));
+    --background-primary-alt: hsl(var(--base-h), var(--base-s), calc(var(--base-l) - 4%));
+    --background-translucent: hsla(var(--base-h), var(--base-s), var(--base-l), 0.85);
+}
+
+.theme-dark.minimal-dark-tonal {
+    --background-secondary: hsl(var(--base-h), var(--base-s), var(--base-d));
+    --background-tertiary: hsl(var(--base-h), var(--base-s), calc(var(--base-d) + 4%));
+}
+
+.theme-dark.minimal-dark-black {
+    --base-d: 0%;
+    --background-primary-alt: hsl(var(--base-h), var(--base-s), calc(var(--base-d) + 6%));
+    --background-tertiary: hsl(var(--base-h), var(--base-s), calc(var(--base-d) + 10%));
+    --background-modifier-border: hsl(var(--base-h), var(--base-s), calc(var(--base-d) + 12%));
+    --background-modifier-border-hover: hsl(var(--base-h), var(--base-s), calc(var(--base-d) + 20%));
+    --background-modifier-border-focus: hsl(var(--base-h), var(--base-s), calc(var(--base-d) + 30%));
+    --background-modifier-cover: hsla(var(--base-h), var(--base-s), calc(var(--base-d) + 8%), 0.9);
+    --text-normal: hsl(var(--base-h), var(--base-s), calc(var(--base-d) + 75%));
+    --text-muted: hsl(var(--base-h), var(--base-s), calc(var(--base-d) + 50%));
+    --text-faint: hsl(var(--base-h), var(--base-s), calc(var(--base-d) + 25%));
+    --icon-muted: 0.5;
+    --background-modifier-box-shadow: rgba(0, 0, 0, 1);
+}
+
+.borders-low {
+    --border-width: 0px;
+    --border-width-alt: 1px;
+}
+
+.borders-none {
+    --border-width: 0px;
+    --border-width-alt: 0px;
+}
+
+/* --------- */
+
+* {
+    font-family: var(--text);
+    border-radius: 0 !important;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Headings and fonts */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+strong {
+    font-weight: var(--bold-weight);
+    font-family: var(--text-headline);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    letter-spacing: -0.02em;
+}
+
+input,
+button {
+    font-family: var(--font-ui);
+}
+
+.popover,
+.vertical-tab-content-container,
+.workspace-leaf-content[data-type=markdown] {
+    font-family: var(--text)
+}
+
+body,
+input,
+button,
+.markdown-preview-view,
+.cm-s-obsidian .cm-formatting-hashtag,
+.cm-s-obsidian {
+    font-size: var(--font-normal);
+    font-weight: var(--normal-weight);
+    line-height: var(--line-height);
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+.markdown-source-view.mod-cm6 .cm-scroller,
+.markdown-source-view,
+.cm-s-obsidian .cm-formatting-hashtag,
+.cm-s-obsidian {
+    line-height: var(--line-height);
+    font-family: var(--text-editor);
+}
+
+.cm-s-obsidian .cm-header,
+.cm-s-obsidian .cm-strong {
+    font-weight: var(--bold-weight);
+}
+
+.cm-formatting-header,
+.cm-s-obsidian .cm-formatting-header.cm-header-4,
+.cm-s-obsidian .cm-formatting-header.cm-header-5,
+.cm-s-obsidian .cm-formatting-header.cm-header-6 {
+    color: var(--interactive-accent);
+    font-weight: var(--bold-weight);
+}
+
+.view-header-title,
+.file-embed-title,
+.markdown-embed-title {
+    letter-spacing: -0.02em;
+    text-align: left;
+    font-size: 1.125em;
+    font-weight: var(--bold-weight);
+}
+
+.empty-state-title,
+.markdown-preview-view h1,
+.HyperMD-header-1,
+.cm-header-1 {
+    letter-spacing: -0.02em;
+    font-size: var(--h1);
+    line-height: 1.3;
+    font-weight: var(--bold-weight);
+    font-family: var(--text-headline);
+}
+
+.markdown-preview-view h2,
+.HyperMD-header-2,
+.cm-header-2 {
+    letter-spacing: -0.02em;
+    font-size: var(--h2);
+    line-height: 1.3;
+    font-weight: var(--bold-weight);
+    font-family: var(--text-headline);
+}
+
+.markdown-preview-view h3,
+.HyperMD-header-3,
+.cm-header-3 {
+    letter-spacing: -0em;
+    font-weight: 500;
+    font-size: var(--h3);
+    line-height: 1.4;
+    font-family: var(--text-headline);
+}
+
+.markdown-preview-view h4,
+.HyperMD-header-4,
+.cm-s-obsidian .cm-header-4 {
+    font-variant: small-caps;
+    letter-spacing: 0.02em;
+    color: var(--text-normal);
+    font-weight: 500;
+    font-size: var(--h4);
+}
+
+.markdown-preview-view h5,
+.HyperMD-header-5,
+.cm-s-obsidian .cm-header-5 {
+    font-variant: small-caps;
+    letter-spacing: 0.02em;
+    color: var(--text-normal);
+    font-weight: 500;
+    font-size: var(--h5);
+}
+
+.markdown-preview-view h6,
+.HyperMD-header-6,
+.cm-s-obsidian .cm-header-6 {
+    font-variant: small-caps;
+    letter-spacing: 0.02em;
+    color: var(--text-muted);
+    font-weight: 400;
+    font-size: var(--h6);
+}
+
+/* titlebar */
+
+.titlebar {
+    background-color: var(--text-normal);
+}
+
+/* panel effect */
+
+.workspace>.workspace-leaf,
+.workspace>.workspace-split {
+    height: 96%;
+    width: 100%;
+    display: flex;
+    margin: 1rem .7rem;
+    padding: .5rem;
+    padding-top: 0;
+    border-bottom: 1rem solid var(--background-primary);
+}
+
+.workspace-split.mod-vertical.mod-root {
+    padding-bottom: 2rem;
+}
+
+.workspace-tabs {
+    margin:0;
+}
+.app-container.is-left-sidedock-collapsed .workspace-split.mod-left-split {
+    margin-left: .5rem;
+}
+
+.app-container.is-right-sidedock-collapsed .workspace-split.mod-right-split {
+    margin-right: .5rem;
+}
+
+.workspace-leaf,
+body.plugin-sliding-panes .workspace>.mod-root>.workspace-leaf,
+body.plugin-sliding-panes .workspace>.mod-root>.workspace-leaf,
+body.plugin-sliding-panes-stacking .workspace>.mod-root>.workspace-leaf {
+    flex: auto !important;
+    padding-top: 0;
+    margin-top: 1rem;
+}
+
+.workspace>.workspace-split {
+    padding-top: 1rem;
+}
+
+.workspace-leaf-content .view-content {
+    padding: 0;
+}
+
+body.plugin-sliding-panes-stacking .workspace>.mod-root>.workspace-leaf {
+    margin-top: 0;
+}
+
+.view-header {
+    margin-bottom: 1rem;
+}
+
+/* panel effect with multiple notes open */
+.CodeMirror-vscrollbar,
+.CodeMirror-hscrollbar,
+.CodeMirror-scrollbar-filler,
+.CodeMirror-gutter-filler {
+    margin: .5rem;
+}
+
+.workspace-leaf-content {
+    border-left: 1px solid var(--interactive-accent);
+    padding-left: .5rem;
+}
+
+.workspace-leaf:first-of-type .workspace-leaf-content {
+    border-left: 1px solid transparent !important;
+}
+
+.workspace-tabs .workspace-leaf-content {
+    border-left: 2px solid transparent !important;
+}
+
+.workspace-leaf-content {
+    padding-right: .5rem;
+}
+
+/* style panels */
+.workspace {
+    background-color: var(--background-secondary);
+}
+
+.workspace>.workspace-split {
+    box-shadow: var(--shadow);
+    background-color: var(--background-primary);
+}
+
+.workspace-tabs,
+.workspace-tabs .workspace-leaf,
+.workspace-leaf-content .view-content,
+.workspace-tab-header-container,
+.workspace-tab-container-before.is-before-active .workspace-tab-header-inner,
+.workspace-tab-container-after.is-after-active .workspace-tab-header-inner,
+.workspace-tab-header.is-before-active .workspace-tab-header-inner,
+.workspace-tab-header.is-after-active .workspace-tab-header-inner,
+.workspace-split.mod-root>.workspace-leaf:first-of-type:last-of-type .view-header,
+.workspace-split.mod-root>.workspace-leaf:first-of-type:last-of-type.mod-active .view-header-title-container:after,
+.view-header {
+    background-color: var(--background-primary) !important;
+}
+
+.view-header {
+    border: none;
+}
+
+.workspace-leaf.mod-active .view-header-title-container:after,
+.view-header-title-container:after {
+    background: var(--background-transparent) !important;
+}
+
+body.plugin-sliding-panes-stacking .workspace>.mod-root>.workspace-leaf,
+body.plugin-sliding-panes-stacking .workspace>.mod-root>.workspace-leaf {
+    box-shadow: none !important;
+}
+
+
+/*  sidepanel icons */
+.nav-header {
+    padding: 0 20px 4px 20px;
+}
+
+/* hide borders */
+.workspace-ribbon.mod-right.is-collapsed,
+.workspace-ribbon.mod-left.is-collapsed,
+.workspace-split.mod-root>.workspace-leaf:first-of-type:last-of-type .view-header {
+    border: none;
+}
+
+.workspace-split.mod-root>.workspace-leaf:first-of-type:last-of-type.mod-active .view-header-title-container:after {
+    background: none;
+}
+
+/* resize handles */
+.workspace-leaf-resize-handle {
+
+    background-color: var(--background-transparent);
+}
+
+/* blockquotes */
+
+.markdown-preview-view blockquote,
+.markdown-preview-view pre {
+    padding: 1rem;
+    margin: 2rem;
+    border: none;
+    background: var(--background-secondary);
+    box-shadow: inset 1px 1px 3px #88888888;
+    border-right: 0.5px solid #88888888;
+    border-bottom: 0.5px solid #88888888;
+}
+
+blockquote p>br {
+    content: " " !important;
+    display: block !important;
+    margin-bottom: 1rem !important;
+}
+
+code {
+    border: none;
+    background: var(--background-secondary);
+    box-shadow: inset 1px 1px 3px #88888888;
+    border-right: 0.5px solid #88888888;
+    border-bottom: 0.5px solid #88888888;
+}
+
+pre code {
+    box-shadow: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+/* iframe center and responsive */
+.iframeDiv {
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+    margin-bottom: 1.5em;
+  }
+  
+  .iframeDiv iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+  
+  /* Scrollbar */
+  /* change width */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  /* no rounded corners - Obsdn-dark-RMX */
+  ::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:active {
+    -webkit-border-radius: 4px;
+  }
+    
+  /* Delay popover */
+  @keyframes fadeIn {
+    0% {
+      visibility: hidden;
+    }
+  
+    50% {
+      visibility: hidden;
+      opacity: 0;
+    }
+  
+    100% {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  
+  .popover {
+    animation: fadeIn 1.5s;
+  }
+
+  .popover {
+      box-shadow: var(--shadow);
+      padding: 1rem;    
+      scale: .8;
+  }
