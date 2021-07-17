@@ -8,6 +8,9 @@ please check it out and let me know where you run into issues.
 
 ### screenshots
 
+laptop screenshot
+![laptop screenshot](https://chad-bennett.github.io/panels-obsidian-theme/panels-laptop-screenshot.png)
+
 ### to install
 1. download `panels.css` to the `.obsidian/themes/` folder in your obsidian vault
 2. open obsidian and click the **settings** (gear icon in bottom-left of interface)
