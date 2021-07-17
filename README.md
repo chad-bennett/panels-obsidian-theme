@@ -12,6 +12,7 @@ i'll be working on this over time, so if there is a setting or tweak for a plug-
 
 laptop screenshot
 ![laptop screenshot](https://chad-bennett.github.io/panels-obsidian-theme/panels-laptop-screenshot.png)
+![ipad screenshot](https://chad-bennett.github.io/panels-obsidian-theme/panels-ipad-screenshot.png)
 
 ### notes
 
